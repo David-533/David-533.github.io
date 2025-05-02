@@ -1,0 +1,53 @@
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: white;
+    color: black;
+}
+
+.page_accueil img {
+    width: 1897px;
+    height: 450px;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+    
+}
+
+.texte-sur-image {
+    position: absolute;
+    top: 10%;
+    color: white;
+    padding: 130px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 10px;
+}
+
+.texte-sur-image p {
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+h2 {
+    text-align: center;
+    color: black;
+}
+p{
+    text-align: center;
+    color: black;
+}
+ul li {
+    text-align: center;
+}
+
+.icons_photo img {
+    width: 230px;
+    height: 150px;
+}
+
+.photo_article img {
+    width: 150px;
+    height: 150px;
+}
