@@ -1,13 +1,13 @@
-
 body {
     margin: 0px;
     padding: 0px;
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
+    ;text-align: center;
 }
 
 .page_accueil img {
-    width: 1897px;
+    width: 1260px;
     height: 450px;
 }
 
@@ -18,36 +18,208 @@ img {
 }
 
 .texte-sur-image {
-    position: absolute;
-    top: 10%;
-    color: white;
-    padding: 130px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    margin: 10px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 40px;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 
+.texte-sur-image h1 {
+  color: white; /* ou une autre couleur fixe */
+  margin: 10px 0;
+}
+
+/* Animation colorée uniquement sur les <p> */
 .texte-sur-image p {
-    font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
+  margin: 10px 0;
+  font-size: 20px;
+  font-family: 'Courier New', Courier, monospace;
+
+  background: linear-gradient(270deg, #ff00c8, #00ffff, #00ff73, #ff00c8);
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorCycle 6s ease infinite;
+}
+
+@keyframes colorCycle {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0%);
+  }
 }
 h2 {
     text-align: center;
-    color: black;
 }
 p{
     text-align: center;
-    color: black;
 }
 ul li {
     text-align: center;
 }
 
-.icons_photo img {
+
+.photo_article img {
     width: 230px;
     height: 150px;
 }
 
-.photo_article img {
-    width: 150px;
-    height: 150px;
+.centre-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 240px; /* augmente légèrement le décalage à droite */
+  padding: 20px 0;
+
 }
+
+/* Animations */
+@keyframes slide-x {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@keyframes slide-x-reverse {
+  0% { left: 100%; }
+  100% { left: -100%; }
+}
+
+@keyframes slide-y {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+@keyframes slide-y-reverse {
+  0% { top: 100%; }
+  100% { top: -100%; }
+}
+
+.icons_photo img {
+    width: 115px;
+    height: 85px;
+    margin: 10px;
+    animation: slide-left-right 2s ease-in-out infinite;
+}
+
+/* Animation personnalisée */
+@keyframes slide-left-right {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-20px); /* Se déplace vers la gauche */
+    }
+    100% {
+        transform: translateX(0); /* Revient à droite */
+    }
+}
+
+.menu-gauche {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #111;
+  padding-top: 60px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.menu-gauche ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-gauche li {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.menu-gauche a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  display: block;
+  padding: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.menu-gauche a:hover {
+  background-color: #00ffff;
+  color: #111;
+}
+
+.section {
+  margin-left: 220px; /* espace réservé pour le menu */
+  padding: 20px;
+  text-align: left;
+}
+
+.section h2 {
+  text-align: left;
+  margin-left: 0px; /* correspond pile à la largeur du menu */
+  margin-bottom: 20px;
+}
+
+.parcours-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.parcours-carte {
+  width: 100%; /* ou 100% si tu veux qu'il prenne toute la largeur disponible */
+  max-width: 800px;
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ffff55;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.parcours-carte:hover {
+  transform: scale(1.03);
+}
+
+.parcours-carte img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.bulle-date {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 20px;
+  color: white;
+  background: linear-gradient(270deg, #00ffff, #ff00c8);
+  background-size: 800% 800%;
+  animation: bulleColorAnim 5s
