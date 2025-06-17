@@ -224,6 +224,7 @@ Cette initiative s'inscrit dans la stratégie d'Uber visant à réduire les coû
     ).then(
       function () {
         alert('Message envoyé avec succès !');
+        document.getElementById('contact-form').reset(); // Vide le formulaire après succès
       },
       function (error) {
         alert('Erreur lors de l’envoi : ' + JSON.stringify(error));
