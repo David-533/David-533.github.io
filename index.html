@@ -26,6 +26,7 @@
     <li><a href="#monparcours">Mon Parcours</a></li>
     <li><a href="#projets">Projets</a></li>
     <li><a href="#veilletechnologique">Veille Technologique</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -44,7 +45,7 @@
 </div>
 
 <div class="centre-page">
-    <a href="CV David Ramin.jpg" target="_blank" class="btn-rapport">Mon CV</a>
+   <a href="CV David Ramin.jpg" target="_blank" class="btn-rapport">Mon CV</a>
 </div>
 
 <div class="section" id="mescertifications">
@@ -102,12 +103,12 @@
         <div class="parcours-carte">
             <h3>SNCF</h3>
             <div class="bulle-date">19 Mai - 20 Juin 2025</div>
-            <a href="https://docs.google.com/document/d/1saecYQqQQjvpYOwmHpFdgbMMXl7QggmNEdbl6fw8TjY/edit?usp=drive_link" target="_blank" class="btn-rapport">Note de Synthèse</a>
+            <a href="https://docs.google.com/document/d/1iJk8K_P8Y5GqTHFvMJmAL3AUDnLNSXkruNEG96JNSZQ/edit?usp=drive_link" target="_blank" class="btn-rapport">Note de Synthèse</a>
         </div>
         <div class="parcours-carte">
             <h3>Stage 2</h3>
             <div class="bulle-date">Mars 2024</div>
-             <a href="https://docs.google.com/document/d/1iJk8K_P8Y5GqTHFvMJmAL3AUDnLNSXkruNEG96JNSZQ/edit?usp=drive_link" target="_blank" class="btn-rapport">Note de Synthèse</a>
+             <a href="https://docs.google.com/document/d/1V3HrWaQiUUAHQSNflrX6WqDdDpQy0uVBTqnKsH-bKsQ/edit?tab=t.0" target="_blank" class="btn-rapport">Note de Synthèse</a>
         </div>
     </div>
 </div>
@@ -174,3 +175,64 @@ Cette initiative s'inscrit dans la stratégie d'Uber visant à réduire les coû
     <p><a href="https://datanews.levif.be/actualite/innovation/mobilite/uber-entend-proposer-en-2026-des-voitures-autonomes-en-europe/" target="_blank">Cliquez ici pour lire l'article</a></p>
   </div>
 </div>
+
+<!-- Le formulaire HTML -->
+<section class="section-contact" id="contact">
+  <form id="contact-form" action="#" method="post" novalidate>
+    <h2>Contactez-moi</h2>
+
+    <div class="form-group">
+      <input type="text" id="name" name="name" placeholder=" " required />
+      <label for="name">Nom</label>
+    </div>
+
+    <div class="form-group">
+      <input type="email" id="email" name="email" placeholder=" " required />
+      <label for="email">Email</label>
+    </div>
+
+    <div class="form-group">
+      <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+      <label for="message">Message</label>
+    </div>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<!-- EmailJS Script -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init('W5C97JtRYCjEdl4B7');
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      alert("Merci de remplir tous les champs avant d’envoyer.");
+      return;
+    }
+
+    emailjs.sendForm(
+      'service_scvt5ts',
+      'template_64hc1c9',
+      this
+    ).then(
+      function () {
+        alert('Message envoyé avec succès !');
+      },
+      function (error) {
+        alert('Erreur lors de l’envoi : ' + JSON.stringify(error));
+      }
+    );
+  });
+</script>
+</body>
+</html>
+
+
+
